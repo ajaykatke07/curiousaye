@@ -1,0 +1,20 @@
+Resources:
+  ProxyLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: proxy_lambda/
+      Handler: handler.lambda_handler
+      Runtime: python3.9
+      Events:
+        ApiGateway:
+          Type: Api
+          Properties:
+            Path: /recognize
+            Method: post
+
+  TextRecognitionLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: text_recognition_lambda/
+      Handler: handler.lambda_handler
+      Runtime: python3.9
