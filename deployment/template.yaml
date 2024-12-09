@@ -3,7 +3,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: proxy_lambda/
-      Handler: handler.lambda_handler
+      Handler: proxy_handler.lambda_handler
       Runtime: python3.9
       Events:
         ApiGateway:
@@ -16,5 +16,5 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: text_recognition_lambda/
-      Handler: handler.lambda_handler
+      Handler: text_handler.lambda_handler
       Runtime: python3.9
